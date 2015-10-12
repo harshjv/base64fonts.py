@@ -46,4 +46,4 @@ Font directories: 3
 
 ## Contribute
 
-Make a pull repuest!
+Make a pull request!
