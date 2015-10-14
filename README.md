@@ -5,7 +5,7 @@ Batch convert fonts to base64 with SASS and LESS importable format
 
 ## Usage
 
-    $ python convert.py --help
+    $ python base64fonts.py --help
 
 ```
 positional arguments:
@@ -20,7 +20,7 @@ optional arguments:
 
 ## Example
 
-    $ python convert.py example/fonts/woff example/less less
+    $ python base64fonts.py example/fonts/woff example/less less
 
 ```
 Font directories: 3
