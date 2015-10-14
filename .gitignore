@@ -156,3 +156,5 @@ npm-debug.log*
 pids
 *.pid
 *.seed
+
+.python-version
