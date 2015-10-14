@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
 import os
 import pathlib
 import base64
 import argparse
-from colorama import init, Fore, Back, Style
-from termcolor import colored
+from colorama import init, Fore, Style
 
 less_template = '@{basename}-{style}: "url(data:application/{font_mime};charset=utf-8;base64,{encoded_string}) format(\'{font_type}\')";\n'
 sass_template = '${basename}-{style}: "url(data:application/{font_mime};charset=utf-8;base64,{encoded_string}) format(\'{font_type}\')";\n'
@@ -21,6 +23,7 @@ EXT_MAP = {
     '.eot': ['application/vnd.ms-fontobject', 'eot'],
     '.otf': ['application/x-font-opentype', 'opentype']
 }
+
 
 def convert(input_dir, output_dir, preprocessor):
     if not os.path.exists(output_dir):
@@ -64,7 +67,8 @@ def convert(input_dir, output_dir, preprocessor):
 
         print('')
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser(description='Batch convert fonts to base64 with SASS and LESS importable format')
     parser.add_argument('input', metavar='i', type=str, nargs=1, help='path of input directory')
     parser.add_argument('output', metavar='o', type=str, nargs=1, help='path of output directory')
@@ -72,6 +76,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     init(autoreset=True)
-    convert(input_dir = args.input[0],
-    output_dir = args.output[0],
-    preprocessor = args.preprocessor)
+    convert(input_dir=args.input[0],
+            output_dir=args.output[0],
+            preprocessor=args.preprocessor)
+
+
+if __name__ == '__main__':
+    main()
